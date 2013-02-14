@@ -56,7 +56,7 @@ if File.exist?("/sbin/ip")
               }
              ]
 
-  popen4("ip addr") do |pid, stdin, stdout, stderr|
+  popen4("/sbin/ip addr") do |pid, stdin, stdout, stderr|
     stdin.close
     cint = nil
     stdout.each do |line|
